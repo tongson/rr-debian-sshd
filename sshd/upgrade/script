@@ -1,0 +1,8 @@
+set -o errexit
+set -o nounset
+
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get -y upgrade openssh-server
+
+systemctl restart ssh
+systemctl status ssh
